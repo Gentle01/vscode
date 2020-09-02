@@ -3,14 +3,75 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<script>
+    function pand() {
+        var msg = confirm("你喜欢我嘛")
+        if (msg == true) {
+            document.getElementById("jg").innerHTML = "是的 ，我喜欢你！"
+            document.getElementById("jg").removeAttribute("hidden")
+        } else {
+            document.getElementById("jg").innerHTML = "我不喜欢你！"
+            document.getElementById("jg").removeAttribute("hidden")
+        }
+
+
+    }
+
+    function rec() {
+        var store = prompt("请输入你的成绩分数")
+        if (store != null) {
+            if (isNaN(store)) {
+                alert("请输入数字")
+            } else {
+
+            }
+        }
+
+        if (store > 100) {
+            alert("请输入正确的成绩分数 好嘛！")
+            rec()
+
+        }
+        if (store > 80) {
+            alert("成绩不错")
+
+        } else {
+            if (store > 60) {
+                alert("还行")
+
+                return
+            }
+            alert("没有及格  ，还需要加油")
+        }
+
+    }
+
+
+    function newwindows() {
+        window.open("https://www.imooc.com", "_blank", width = "600", height = "400", menubar = "no", toolbar = "no")
+
+    }
+
+    function desk() {
+        var crs = confirm("是否打开新窗口")
+        if (crs == true) {
+            window.open("http://www.imooc.com/", "_blank", width = 400, height = 500, menubar = "no", to = "no")
+        } else {
+
+        }
+    }
+</script>
 
 <body>
-    <span>test  is  start！！！</span>
-    <p>手动修改12</p>
-    <h1>小标题</h1>
+    <button type="button" onclick="pand()">confirm点击我！</button>
+    <button type="button" onclick="rec()">prompt点击我！</button>
+
+    <button type="button" onclick="newwindows()">测试新窗口打开！</button>
+    <button type="button" onclick="desk()">desk 按钮</button>
+    <p id="jg" hidden>ssss</p>
 </body>
 
 </html>
